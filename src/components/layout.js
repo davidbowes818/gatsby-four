@@ -1,9 +1,8 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 
 import { rhythm } from "../utils/typography"
-
 export default ({ children }) => {
   const data = useStaticQuery(
     graphql`
@@ -16,7 +15,6 @@ export default ({ children }) => {
       }
     `
   )
-
   return (
     <div
       css={css`

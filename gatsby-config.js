@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Title from siteMetadata`,
+  },
   plugins: [
     `gatsby-plugin-emotion`,
     {
@@ -13,8 +16,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
   ],
-  siteMetadata: {
-    title: "Pandas Eating Lots",
-  },
 }
