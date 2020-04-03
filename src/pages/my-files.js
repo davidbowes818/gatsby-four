@@ -11,10 +11,10 @@ export default ({ data }) => {
         <table>
           <thead>
             <tr>
-              <th>relativePath</th>
-              <th>prettySize</th>
-              <th>extension</th>
-              <th>birthTime</th>
+              <th>Filepath</th>
+              <th>Size</th>
+              <th>Extension</th>
+              <th>Date Created</th>
             </tr>
           </thead>
           <tbody>
@@ -35,13 +35,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile {
+    allFile(sort: { order: DESC, fields: birthTime }) {
       edges {
         node {
+          id
           relativePath
           prettySize
           extension
-          birthTime(fromNow: true)
+          birthTime(formatString: "DD/MM/YY")
         }
       }
     }
