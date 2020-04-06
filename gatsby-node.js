@@ -8,3 +8,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({ node, name: "slug", value: slug })
   }
 }
+
+exports.createPages = async ({ graphql, actions }) => {
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(JSON.stringify(result, null, 4))
+}
