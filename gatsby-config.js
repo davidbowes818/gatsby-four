@@ -7,6 +7,8 @@
 module.exports = {
   siteMetadata: {
     title: `Pandas Eating Lots`,
+    description: `A simple description about pandas eating lots...`,
+    author: `gatsbyjs`,
   },
   plugins: [
     {
@@ -43,5 +45,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
